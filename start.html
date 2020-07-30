@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play!</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="playpage">
+        <br><br><br>
+        <h1 id="info"></h1>
+        <div class="board" id="board">
+            <div class="cell" data-cell id="cell1" onclick="clicktombol(1)"></div>
+            <div class="cell" data-cell id="cell2" onclick="clicktombol(2)"></div>
+            <div class="cell" data-cell id="cell3" onclick="clicktombol(3)"></div>
+            <div class="cell" data-cell id="cell4" onclick="clicktombol(4)"></div>
+            <div class="cell" data-cell id="cell5" onclick="clicktombol(5)"></div>
+            <div class="cell" data-cell id="cell6" onclick="clicktombol(6)"></div>
+            <div class="cell" data-cell id="cell7" onclick="clicktombol(7)"></div>
+            <div class="cell" data-cell id="cell8" onclick="clicktombol(8)"></div>
+            <div class="cell" data-cell id="cell9" onclick="clicktombol(9)"></div>
+        </div>
+        <h1 id="win"></h1>
+        <button type="submit" id="reset" class="btn" onclick="location.reload()"></button>
+        <button type="button" id="home" class="btn" href="index.html" onclick="location.href='index.html'"></button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
