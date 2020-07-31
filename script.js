@@ -1,11 +1,15 @@
 let player = 'X'
 let squareFilled = 0
+let clickSound = document.getElementById('clickSound')
+let winSound = document.getElementById('winSound')
+let drawSound = document.getElementById('drawSound')
 
 document.getElementById('info').innerHTML = 'Player Turn : ' + player;
 
 function clicktombol(num) {
 	document.getElementById('cell'+num).innerHTML = player;
 	document.getElementById('cell'+num).value = player;
+	clickSound.play()
 	squareFilled++
 	if(player === 'X'){
 		document.getElementById('info').innerHTML = 'Player Turn : O';
@@ -46,6 +50,7 @@ function win() {
 	document.getElementById('reset').style.width = '120px';
 	document.getElementById('home').innerHTML = 'Home';
 	document.getElementById('home').style.width = '120px';
+	winSound.play()
 	for(let i = 0; i <= 9; i++){
 		document.getElementById('cell'+i).disabled = 'disabled';
 	}
@@ -57,6 +62,7 @@ function draw() {
 	document.getElementById('reset').style.width = '120px';
 	document.getElementById('home').innerHTML = 'Home';
 	document.getElementById('home').style.width = '120px';
+	drawSound.play()
 	for(let i = 0; i <= 9; i++){
 		document.getElementById('cell'+i).disabled = 'disabled';
 	}
