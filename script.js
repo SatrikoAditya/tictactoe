@@ -11,6 +11,7 @@ function clicktombol(num) {
 	document.getElementById('cell'+num).value = player;
 	clickSound.play()
 	squareFilled++
+	document.getElementById('cell'+num).style.pointerEvents = 'none';
 	if(player === 'X'){
 		document.getElementById('info').innerHTML = 'Player Turn : O';
 		winningCheck()
@@ -51,8 +52,8 @@ function win() {
 	document.getElementById('home').innerHTML = 'Home';
 	document.getElementById('home').style.width = '120px';
 	winSound.play()
-	for(let i = 0; i <= 9; i++){
-		document.getElementById('cell'+i).disabled = 'disabled';
+	for(let i = 1; i <= 9; i++){
+		document.getElementById('cell'+i).style.pointerEvents = 'none';
 	}
 }
 
@@ -63,7 +64,7 @@ function draw() {
 	document.getElementById('home').innerHTML = 'Home';
 	document.getElementById('home').style.width = '120px';
 	drawSound.play()
-	for(let i = 0; i <= 9; i++){
-		document.getElementById('cell'+i).disabled = 'disabled';
+	for(let i = 1; i <= 9; i++){
+		document.getElementById('cell'+i).style.pointerEvents = 'none';
 	}
 }
