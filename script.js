@@ -1,10 +1,12 @@
 let player = 'X'
+let squareFilled = 0
 
 document.getElementById('info').innerHTML = 'Player Turn : ' + player;
 
 function clicktombol(num) {
 	document.getElementById('cell'+num).innerHTML = player;
 	document.getElementById('cell'+num).value = player;
+	squareFilled++
 	if(player === 'X'){
 		document.getElementById('info').innerHTML = 'Player Turn : O';
 		winningCheck()
@@ -33,14 +35,25 @@ function winningCheck() {
 		win()
 	} else if(document.getElementById('cell3').value === player && document.getElementById('cell5').value === player && document.getElementById('cell7').value === player){
 		win()
-	} else {
-		
+	} else if(squareFilled === 9) {
+		draw()
 	}
 }
 
 function win() {
 	document.getElementById('win').innerHTML = 'Player ' + player +' Win!';
-	document.getElementById('reset').innerHTML = 'Reset';
+	document.getElementById('reset').innerHTML = 'Play Again';
+	document.getElementById('reset').style.width = '120px';
+	document.getElementById('home').innerHTML = 'Home';
+	document.getElementById('home').style.width = '120px';
+	for(let i = 0; i <= 9; i++){
+		document.getElementById('cell'+i).disabled = 'disabled';
+	}
+}
+
+function draw() {
+	document.getElementById('win').innerHTML = 'Draw!';
+	document.getElementById('reset').innerHTML = 'Play Again';
 	document.getElementById('reset').style.width = '120px';
 	document.getElementById('home').innerHTML = 'Home';
 	document.getElementById('home').style.width = '120px';
