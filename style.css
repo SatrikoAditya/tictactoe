@@ -57,6 +57,8 @@ body {
     cursor: pointer;
     font-size: 90px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
   }
   .cell:hover{
       border: 2px solid #ff9700;
